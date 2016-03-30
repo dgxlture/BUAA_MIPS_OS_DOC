@@ -42,12 +42,22 @@ Lab1实验报告
 
 * Thinking 2.2 思考下面四个描述，你觉得哪些正确，哪些错误，请给出你参考的资料或实验证据。
 1. 克隆时所有分支均被克隆，但只有 HEAD 指向的分支被检出。
+>错误
+>git clone默认会把远程仓库整个给clone下来; 但只会在本地默认创建一个master分支如果远程还有其他的分支，此时用git branch -a查看所有分支,使用checkout命令来把远程分支取到本地，并自动建立tracking
 
 2. 克隆出的工作区中执行 git log、 git status、 git checkout、 git commit 等操作不会去访问远程版本库。
+>错误
+>git log 查看的是本地的历史，如果之前没有与仓库同步的话，不能显示远程仓库新的改动。
+>git status 查看你的代码在缓存与当前工作目录的状态
+>git commit只是把修改推送到本地库
+>git checkout会访问远程库
+
+
 
 3. 克隆时只有远程版本库 HEAD 指向的分支被克隆。
-
+>错，git clone默认会把远程仓库整个给clone下来
 4. 克隆后工作区的默认分支处于 master 分支。
+>正确
 
 
 
